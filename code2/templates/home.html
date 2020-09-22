@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <!-- Instruction -->
+    <div class="">
+        <h1 class="w3-jumbo w3-animate-top w3-center" align="center">Data Governance Web Scraper</h1>
+        <hr class="w3-border-grey" style="margin:auto;">
+        <div class="w3-center">
+
+            <br>
+            <!-- display -->
+
+
+            <div align="center">
+                <form action="/new" method="POST">
+                    <label class="container w3-padding-16">NSAI - 2020
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container w3-padding-16">NSAI - Historic
+                        <input type="checkbox" disabled="disabled">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Pick any url
+                        <input type="checkbox" disabled="disabled">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <input class="w3-button w3-green" type="submit" value="SCRAPE" />
+                </form>
+            </div>
+            <br>
+            <h2 align="center">Job Run Analysis</h2>
+
+            <div class="w3-center">
+                <div class="w3-display-container w3-center">
+                    <table border="1" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th bgcolor="aqua" style="width: 45.0797%;" border="1">SERIAL NUM</th>
+                                <th bgcolor="aqua" style="width: 150.0797%;">RUN DATE</th>
+                                <th bgcolor="aqua" style="width: 500.0797%;">LINK SCRAPED</th>
+                                <th bgcolor="aqua" style="width: 45.0797%;">SCRAPING SCORE</th>
+                                <th bgcolor="aqua" style="width: 150.797%;">TIME TAKEN (sec)</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td class="">{{ item["serial_num"] }}</td>
+                                <td class="">{{ item["date_ran"] }}</td>
+                                <td class=""><a href='{{ item["url"] }}'>{{ item["url"] }}</a></td>
+                                <td class="">{{ item["scraping_score"] }}</td>
+                                <td class="w3-right-align">{{ item["time_taken"] }}</td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                {% endblock content %}

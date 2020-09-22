@@ -1,4 +1,4 @@
-# scraping_flask_docker
+# Datagovernance Webscraper
 This code scrapes web to read pdfs using beautiful soup, flask and docker. Tabula-py is used to convert pdfs to json/csv
 
 

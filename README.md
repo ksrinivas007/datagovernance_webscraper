@@ -1,5 +1,12 @@
-# Datagovernance Webscraper
+
+# Data Governance VISION
+
+https://drive.google.com/file/d/1N6knbrkyYYUGmMZFbnJjFyW8yUiCBLDW/view?usp=sharing
+
+# Data Gvernance Webscraper
 This code scrapes web to read pdfs using beautiful soup, flask and docker. Tabula-py is used to convert pdfs to json/csv
+
+
 
 
 ## Use Case developed as part of POC
